@@ -14,6 +14,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         while not done:
             data = client.recv(1024)
             file_bytes += data
+            print(data)
 
             if data[-5:] == b"<END>":
                 done = True
